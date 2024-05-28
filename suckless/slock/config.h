@@ -3,10 +3,23 @@ static const char *user = "joser";
 static const char *group = "wheel";
 
 static const char *colorname[NUMCOLS] = {
-    [INIT] = "black",     /* after initialization */
-    [INPUT] = "#005577",  /* during input */
-    [FAILED] = "#CC3333", /* wrong password */
+    [INIT] = "#000000",   /* after initialization */
+    [INPUT] = "#282c34",  /* during input */
+    [FAILED] = "#be5046", /* wrong password */
 };
 
+/* lock screen opacity */
+static const float alpha = 0.8;
+
 /* treat a cleared input like a wrong password (color) */
-static const int failonclear = 0;
+static const int failonclear = 1;
+
+/* default message */
+static const char *message = "Enter password to unlock";
+
+/* text color */
+static const char *text_color = "#abb2bf";
+
+/* text size (must be a valid size) */
+static const char *text_size =
+    "-Sony-Fixed-Medium-R-Normal--24-170-100-100-C-120-ISO8859-1";
