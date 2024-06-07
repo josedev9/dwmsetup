@@ -75,7 +75,7 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *slock[] = {"slock", NULL};
 static const char *termcmd[] = {"kitty", NULL};
-static const char *kazam[] = {"kazam", NULL};
+static const char *flameshot[] = {"flameshot", "gui", NULL};
 static const char *srecord[] = {"simplescreenrecorder", NULL};
 static const char *up_vol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
                                "+2%", NULL};
@@ -87,7 +87,7 @@ static const char *mute_vol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {ControlMask | MODKEY, XK_r, spawn, {.v = srecord}},
-    {ControlMask | MODKEY, XK_p, spawn, {.v = kazam}},
+    {ControlMask | MODKEY, XK_p, spawn, {.v = flameshot}},
     {0, 0x1008FF13, spawn, {.v = up_vol}},
     {0, 0x1008FF11, spawn, {.v = down_vol}},
     {0, 0x1008FF12, spawn, {.v = mute_vol}},
