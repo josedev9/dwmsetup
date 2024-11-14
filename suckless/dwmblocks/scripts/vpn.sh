@@ -12,10 +12,13 @@ printer() {
     printf "%s\n" "$SEP2"
 
 }
-dwm_vpn () {
-    VPN=$(nmcli c | grep 'vpn' | awk '{ printf $4 }')
-    VPN1=$(nmcli c | grep 'vpn' | awk '{ printf $1 }')
-    if [ "$VPN" == "--" ]; then
+dwm_vpn() {
+    VPN=$(nmcli c | grep 'wireguard' | awk '{ printf $4 }')
+    VPN1=$(nmcli c | grep 'wireguard' | awk '{ printf $1 }')
+    if [ "$VPN1" == "" ]; then
+        VPN1="DEFAULT"
+    fi
+    if [ "$VPN" == "" ] || [ "$VPN" == "--" ]; then
         COLOR=#ff6c6b
         printer
     else
