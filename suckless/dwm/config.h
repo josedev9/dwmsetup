@@ -78,6 +78,7 @@ static const char *termcmd[] = {"kitty", NULL};
 static const char *flameshot[] = {"flameshot", "gui", NULL};
 static const char *task_manager[] = {"gnome-system-monitor", NULL};
 static const char *thunar[] = {"thunar", NULL};
+static const char *audio_manager[] = {"pavucontrol", NULL};
 static const char *srecord[] = {"simplescreenrecorder", NULL};
 static const char *up_vol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
                                "+2%", NULL};
@@ -94,7 +95,8 @@ static const Key keys[] = {
     {ControlMask | ShiftMask, 0xFF56, spawn, {.v = down_vol}},
     {ControlMask | ShiftMask, 0xFF50, spawn, {.v = mute_vol}},
     {MODKEY2, XK_e, spawn, {.v = thunar}},
-    {MODKEY | ShiftMask, XK_Escape, spawn, {.v = task_manager}},
+    {ControlMask | ShiftMask, 0xFF1B, spawn, {.v = task_manager}},
+    {ControlMask | ShiftMask, XK_m, spawn, {.v = audio_manager}},
     {MODKEY2, XK_l, spawn, {.v = slock}},
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {ControlMask | MODKEY, XK_t, spawn, {.v = termcmd}},

@@ -8,7 +8,9 @@ static const unsigned int gappx = 5;    /* gap pixel between windows */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {
-    "Hack Bold Nerd Font Complete:size=12:antialias=true:autohint=true"};
+    "monospace:size=12", "FontAwesome6Brands:size=12:antialias:true",
+    "FontAwesome6Free:size=12:antialias:true",
+    "FontAwesome6Free:style=Solid:size=12:antialias:true"};
 static const char dmenufont[] = "Blex Mono Bold Nerd Font Complete:size=10";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
@@ -73,6 +75,11 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *slock[] = {"slock", NULL};
 static const char *termcmd[] = {"kitty", NULL};
+static const char *flameshot[] = {"flameshot", "gui", NULL};
+static const char *task_manager[] = {"gnome-system-monitor", NULL};
+static const char *thunar[] = {"thunar", NULL};
+static const char *audio_manager[] = {"pavucontrol", NULL};
+static const char *srecord[] = {"simplescreenrecorder", NULL};
 static const char *up_vol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
                                "+2%", NULL};
 static const char *down_vol[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
@@ -82,9 +89,14 @@ static const char *mute_vol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
-    {0, 0x1008FF13, spawn, {.v = up_vol}},
-    {0, 0x1008FF11, spawn, {.v = down_vol}},
-    {0, 0x1008FF12, spawn, {.v = mute_vol}},
+    {ControlMask | MODKEY, XK_r, spawn, {.v = srecord}},
+    {ControlMask | MODKEY, XK_p, spawn, {.v = flameshot}},
+    {ControlMask | ShiftMask, 0xFF55, spawn, {.v = up_vol}},
+    {ControlMask | ShiftMask, 0xFF56, spawn, {.v = down_vol}},
+    {ControlMask | ShiftMask, 0xFF50, spawn, {.v = mute_vol}},
+    {MODKEY2, XK_e, spawn, {.v = thunar}},
+    {ControlMask | MODKEY, 0xFF1B, spawn, {.v = task_manager}},
+    {ControlMask | MODKEY, XK_m, spawn, {.v = audio_manager}},
     {MODKEY2, XK_l, spawn, {.v = slock}},
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {ControlMask | MODKEY, XK_t, spawn, {.v = termcmd}},
