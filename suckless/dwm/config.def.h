@@ -75,6 +75,7 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
 static const char *slock[] = {"slock", NULL};
 static const char *termcmd[] = {"kitty", NULL};
+static const char *zathura[] = {"zathura", NULL};
 static const char *flameshot[] = {"flameshot", "gui", NULL};
 static const char *task_manager[] = {"gnome-system-monitor", NULL};
 static const char *thunar[] = {"thunar", NULL};
@@ -96,6 +97,7 @@ static const Key keys[] = {
     {ControlMask | ShiftMask, 0xFF50, spawn, {.v = mute_vol}},
     {MODKEY2, XK_e, spawn, {.v = thunar}},
     {ControlMask | ShiftMask, 0xFF1B, spawn, {.v = task_manager}},
+    {ControlMask | MODKEY, XK_e, spawn, {.v = zathura}},
     {ControlMask | MODKEY, XK_m, spawn, {.v = audio_manager}},
     {MODKEY2, XK_l, spawn, {.v = slock}},
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
