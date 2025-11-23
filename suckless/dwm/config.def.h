@@ -7,11 +7,8 @@ static const unsigned int snap = 32;    /* snap pixel */
 static const unsigned int gappx = 5;    /* gap pixel between windows */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
-static const char *fonts[] = {
-    "monospace:size=12", "FontAwesome6Brands:size=12:antialias:true",
-    "FontAwesome6Free:size=12:antialias:true",
-    "FontAwesome6Free:style=Solid:size=12:antialias:true"};
-static const char dmenufont[] = "Blex Mono Bold Nerd Font Complete:size=10";
+static const char *fonts[] = {"0xProto Nerd Font Mono:pixelsize=18:style=bold"};
+static const char dmenufont[] = "0xProto Nerd Font Mono:pixelsize:14:style=bold";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
@@ -76,8 +73,8 @@ static const char *dmenucmd[] = {
 static const char *slock[] = {"slock", NULL};
 static const char *termcmd[] = {"kitty", NULL};
 static const char *zathura[] = {"zathura", NULL};
-// static const char *flameshot[] = {"flameshot", "gui", NULL};
-static const char *spectacle[] = {"spectacle", NULL};
+static const char *flameshot[] = {"flameshot", "gui", NULL};
+// static const char *spectacle[] = {"spectacle", NULL};
 static const char *task_manager[] = {"gnome-system-monitor", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *audio_manager[] = {"pavucontrol", NULL};
@@ -92,8 +89,8 @@ static const char *mute_vol[] = {"pactl", "set-sink-mute", "@DEFAULT_SINK@",
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {ControlMask | MODKEY, XK_r, spawn, {.v = srecord}},
-    // {ControlMask | MODKEY, XK_p, spawn, {.v = flameshot}},
-    {ControlMask | MODKEY, XK_p, spawn, {.v = spectacle}},
+    {ControlMask | MODKEY, XK_p, spawn, {.v = flameshot}},
+    //{ControlMask | MODKEY, XK_p, spawn, {.v = spectacle}},
     {ControlMask | ShiftMask, 0xFF55, spawn, {.v = up_vol}},
     {ControlMask | ShiftMask, 0xFF56, spawn, {.v = down_vol}},
     {ControlMask | ShiftMask, 0xFF50, spawn, {.v = mute_vol}},
